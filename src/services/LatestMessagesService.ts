@@ -5,7 +5,7 @@ export class LatestMessagesService {
         return await prismaClient.message.findMany({
             take: amount ? amount : 3,
             orderBy: {
-                created_at: 'desc'
+                created_at: 'asc'
             },
             include: {
                 user: true
