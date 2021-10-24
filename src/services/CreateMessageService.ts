@@ -20,7 +20,8 @@ export class CreateMessageService {
             created_at: message.created_at,
             user: {
                 name: message.user.name,
-                avatar_url: message.user.avatar_url
+                avatar_url: message.user.avatar_url,
+                login: message.user.login
             }
         }
         io.emit('new_message', infoWS)
