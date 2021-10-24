@@ -67,7 +67,7 @@ export class AuthUserService {
             },
             process.env.JWT_SECRET,
             {
-                subject:String(user.id),
+                subject: String(user.id),
                 expiresIn: '1d'
             }
         )
