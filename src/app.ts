@@ -21,7 +21,6 @@ app.get('/github', (req,res)  => {
         `https://github.com/login/oauth/authorize?client_id=${process.env.GITHUB_AUTH_CLIENT_ID}`
     )
 })
-
 app.get('/signin/callback', (req,res) => {
     const { code } = req.query
     res.json(code)
