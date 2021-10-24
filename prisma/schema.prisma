@@ -6,13 +6,13 @@ generator client {
 }
 
 datasource db {
-  provider = "sqlite"
-  url      = "file:./dev.db"
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
 }
 
 
 model User {
-  id String @id @default(uuid()) // define tipo String, PK como campo id (@id) e autoincrement (@default(uuid)))
+  id Int @id @default(autoincrement()) // define tipo String, PK como campo id (@id) e autoincrement (@default(uuid)))
   name String
   github_id Int
   avatar_url String
@@ -24,7 +24,7 @@ model User {
 }
 
 model Message {
-  id String @id @default(uuid())
+  id Int @id @default(autoincrement())
   text String
   created_at DateTime @default(now())
 
@@ -32,5 +32,5 @@ model Message {
 
   @@map("messages")
   
-  user_id String
+  user_id Int
 }

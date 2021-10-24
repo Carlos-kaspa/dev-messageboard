@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "dev": "ts-node-dev --exit-child src/server.ts",
-    "migrations":"npx prisma migrate dev",
+    "migrations": "npx prisma migrate dev",
     "start": "node src/server.js",
     "build": "tsc",
     "postinstall": "npm run build && npm run migrations"
