@@ -6,6 +6,6 @@ export class UserProfileController {
     async handle(req: Request,res:Response) {
         const { user_id } = req
        const service = new UserProfileService()
-       return res.json(await service.execute(Number(user_id)))
+       return res.json(await service.execute(String(user_id)))
     }
 }
