@@ -26,7 +26,8 @@ export class AuthUserService {
                 code
             },
             headers: {
-                'Accept': 'application/json'
+                'Accept': 'application/json',
+                'Access-Control-Allow-Origin': '*'
             }
         }
 
@@ -34,7 +35,8 @@ export class AuthUserService {
         
         const { data: userResponse } = await axios.get<IUserResponse>('https://api.github.com/user', {
             headers: {
-                authorization: ` Bearer ${accessTokenResponse.access_token}`
+                authorization: ` Bearer ${accessTokenResponse.access_token}`,
+                'Access-Control-Allow-Origin': '*'
             }
         })
         
