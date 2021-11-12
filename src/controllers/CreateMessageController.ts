@@ -8,9 +8,10 @@ export class CreateMessageController {
       
         try {
             const service = new CreateMessageService()
-            return res.json(await service.execute(message, String(user_id)))
+            return res.json(await service.execute(message, Number(user_id)))
         } catch(err) {
-            return res.status(err.response.status).json({ error: err.message})
+            console.log('err', err)
+            return res.status(500).json({ error: err.message})
         }
         
     }
